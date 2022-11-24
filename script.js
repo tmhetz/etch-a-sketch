@@ -7,6 +7,8 @@ document.querySelectorAll(".makeGrid").forEach((item) => {
 // clear the sketchboard during each button press
 
 function makeGrid(e){
+    clearGrid();
+
     let go = true;
     let counter = 0;
     let number = Number(this.dataset.gridsize);
@@ -39,5 +41,11 @@ function setWidthHeight(number){
     for(let i = 0; i < boxes.length; i++){
         boxes[i].style.width = `${width}px`;
         boxes[i].style.height = `${height}px`;
+    }
+}
+
+function clearGrid(){
+    while(container.firstChild){
+        container.removeChild(container.lastChild);
     }
 }
