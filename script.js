@@ -1,16 +1,8 @@
-let btnMakeGrid64 = document.getElementById("makeGrid64");
-let btnMakeGrid32 = document.getElementById("makeGrid32");
-let btnMakeGrid16 = document.getElementById("makeGrid16");
-let btnMakeGrid8 = document.getElementById("makeGrid8");
-
 let container = document.getElementById("container");
 
-btnMakeGrid64.addEventListener("click", makeGrid);
-btnMakeGrid32.addEventListener("click", makeGrid);
-btnMakeGrid16.addEventListener("click", makeGrid);
-btnMakeGrid8.addEventListener("click", makeGrid);
-
-// add event listeners to each button in one line
+document.querySelectorAll(".makeGrid").forEach((item) => {
+    item.addEventListener("click", makeGrid);
+});
 
 // clear the sketchboard during each button press
 

@@ -9,10 +9,10 @@ body {
 
 #header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #073b4c;
     color: white;
-    padding: 20px 0px;
+    padding: 20px 20px;
 }
 
 #footer {
@@ -39,19 +39,24 @@ button {
     margin: 0px 20px 5px 20px;
 }
 
+#clear {
+    margin: 0px 20px;
+}
+
 #container {
-    border: solid black;
     height: 500px;
     width: 500px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    background-color: white;
 }
 
 .box {
     height: 25px;
     width: 25px;
-    background-color: lightgray;
+    background-color: white;
     /* border: darkgray solid 2px; */
     display: block;
     font-size: xx-small;
