@@ -1,10 +1,16 @@
 let container = document.getElementById("container");
+let clearBtn = document.getElementById("clear");
 
 document.querySelectorAll(".makeGrid").forEach((item) => {
     item.addEventListener("click", makeGrid);
 });
 
-// clear the sketchboard during each button press
+clearBtn.addEventListener("click", () => {
+    let boxes = document.getElementsByClassName("box");
+    for(let i = 0; i < boxes.length; i++){
+        boxes[i].style.backgroundColor = "white";
+    }
+});
 
 function makeGrid(e){
     clearGrid();
@@ -37,7 +43,6 @@ function setWidthHeight(number){
     console.log(height);
     let width = 500/number;
     let boxes = document.getElementsByClassName("box");
-    console.log(boxes);
     for(let i = 0; i < boxes.length; i++){
         boxes[i].style.width = `${width}px`;
         boxes[i].style.height = `${height}px`;
