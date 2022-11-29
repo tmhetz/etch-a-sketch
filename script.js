@@ -26,6 +26,7 @@ clearBtn.addEventListener("click", () => {
     let boxesClear = document.getElementsByClassName("box");
     for(let i = 0; i < boxesClear.length; i++){
         boxesClear[i].style.backgroundColor = "white";
+        boxesClear[i].dataset.colorPerc = "10";
     }
 });
 
