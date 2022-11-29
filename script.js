@@ -1,14 +1,18 @@
 let container = document.getElementById("container");
 let clearBtn = document.getElementById("clear");
+let userInput = document.querySelector("#userInput");
 let colorMode = "";
 let lastGridSize = 64;
 let colorAdded = false;
+let userInputAdded = false;
 
 let boxes = document.querySelectorAll(".box");
 
 document.querySelectorAll(".makeGrid").forEach((item) => {
     item.addEventListener("click", makeGrid);
 });
+
+userInput.addEventListener("click", askUser);
 
 document.querySelectorAll(".colorSelector").forEach((item) => {
     item.addEventListener("click", function(e) {
@@ -32,13 +36,14 @@ function makeGrid(e){
     let counter = 0;
     let number;
 
-    if(!colorAdded){
+    if(!colorAdded && !userInputAdded){
         number = Number(this.dataset.gridsize);
         lastGridSize = number;
     } else {
         number = lastGridSize;
     }
     colorAdded = false;
+    userInputAdded = false;
     
     while(go){
         makeRow(number);
@@ -85,4 +90,15 @@ function color(e){
     } else{
         e.target.style.backgroundColor = "#118AB2";
     }
+}
+
+function askUser(){
+    let userInput = "";
+    do {
+        userInput = Number(prompt("Please enter a grid size:", 64));
+    } while (isNaN(userInput) || userInput < 2 || userInput > 100);
+    lastGridSize = userInput;
+    userInputAdded = true;
+    makeGrid();
+
 }
